@@ -43,7 +43,7 @@ async function registerUser(data: {
   const handleGoogle = async () => {
     await authClient.signIn.social({
       provider: "google",
-      callbackURL: "http://localhost:3000",
+      callbackURL: "https://skillbridge-frontend-ten-nu.vercel.app",
     });
   };
 
