@@ -13,22 +13,55 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-const [user, setUser] = useState<User | null>(null);
 
-  useEffect(() => {
-    fetch("https://skillbridge-backend-6mpi.onrender.com/api/me", {
-      credentials: "include",
-    })
-      .then((res) => res.json())
-      .then((data) => setUser(data.data || data));
-  }, []);
+  const [user, setUser] = useState<User | null>(null);
+const [loading, setLoading] = useState(true);
 
-  if (!user) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        Loading...
-      </div>
-    );
+useEffect(() => {
+  const getMe = async () => {
+    try {
+      const res = await fetch(
+        "https://skillbridge-backend-6mpi.onrender.com/api/me",
+        {
+          credentials: "include",
+        }
+      );
+
+      if (!res.ok) {
+        throw new Error("Unauthorized");
+      }
+
+      const data = await res.json();
+
+      console.log(data);
+
+      setUser(data.data || data);
+    } catch (error) {
+      console.error(error);
+      setUser(null);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  getMe();
+}, []);
+
+if (loading) {
+  return (
+    <div className="flex items-center justify-center min-h-screen">
+      Loading...
+    </div>
+  );
+}
+
+if (!user) {
+  return (
+    <div className="flex items-center justify-center min-h-screen">
+      Please login first
+    </div>
+  );
+}
   }
 
   const menu = {
