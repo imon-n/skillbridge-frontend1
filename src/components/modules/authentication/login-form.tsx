@@ -57,11 +57,13 @@ const handleGoogle = async () => {
     provider: "google",
     callbackURL: "https://skillbridge-frontend-ten-nu.vercel.app/dashboard",
     fetchOptions: {
-      credentials: "include", 
+      credentials: "include",
+      onSuccess: () => {
+        router.push("/dashboard"); // 👈 এটা add করো
+      },
     },
   });
 };
-
   return (
     <Card>
       <CardHeader>
