@@ -566,6 +566,7 @@ export default function TutorClient({
   id: string;
 }) {
   const API = process.env.NEXT_PUBLIC_API_URL;
+  console.log(API)
 
   const router = useRouter();
 
