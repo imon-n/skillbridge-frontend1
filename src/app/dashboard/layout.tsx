@@ -146,7 +146,7 @@ export default function DashboardLayout({
     const getMe = async () => {
       try {
      const res = await fetch(
-  "https://assignment5-backend-f7q4.onrender.com/api/me",
+  "https://skillbridge-backend-6mpi.onrender.com/api/me",
   {
     credentials: "include",
     headers: {
@@ -194,7 +194,7 @@ export default function DashboardLayout({
     STUDENT: [
       { href: "/dashboard", label: "Overview" },
       { href: "/dashboard/bookings", label: "My Bookings" },
-      { href: "/dashboard/reviews", label: "My Reviews" },
+  
       { href: "/dashboard/me", label: "Profile" },
     ],
     TUTOR: [
