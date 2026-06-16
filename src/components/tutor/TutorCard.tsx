@@ -33,8 +33,7 @@ export function TutorCard({ tutor }: Props) {
 
         <img
               src={tutor?.image}
-              fill
-          priority
+              alt={tutor?.user?.name}
           className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
             />
 
