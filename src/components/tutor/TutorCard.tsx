@@ -31,13 +31,12 @@ export function TutorCard({ tutor }: Props) {
       {/* Image Section */}
       <div className="relative h-[230px] w-full overflow-hidden">
 
-        <Image
-          src={tutor.image}
-          alt={tutor.user.name}
-          fill
+        <img
+              src={tutor?.image}
+              fill
           priority
           className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
-        />
+            />
 
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
