@@ -34,7 +34,7 @@ export function TutorCard({ tutor }: Props) {
         <img
               src={tutor?.image}
               alt={tutor?.user?.name}
-          className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
+          className="w-full h-fullobject-cover object-top transition-transform duration-700 group-hover:scale-110"
             />
 
         {/* Dark Overlay */}
