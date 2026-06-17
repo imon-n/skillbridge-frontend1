@@ -176,7 +176,7 @@ export function RegisterForm() {
     name: "",
     email: "",
     password: "",
-    role: "student",
+    role: "STUDENT",
     image: "",
   });
 
@@ -260,7 +260,7 @@ export function RegisterForm() {
         />
 
         <Input
-          placeholder="Role (student/tutor)"
+          placeholder="Role (STUDENT/TUTOR)"
           onChange={(e) => setForm({ ...form, role: e.target.value })}
         />
 
